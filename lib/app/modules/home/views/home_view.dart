@@ -15,17 +15,29 @@ class HomeView extends GetView<HomeController> {
       ),
       body: Column(
         children: [
-           Center(
+          Center(
             child: Text(
               'HomeView is working',
               style: TextStyle(fontSize: 20),
             ),
           ),
-         ElevatedButton(
-          onPressed: (){
-            Get.toNamed('/counter');
-          },
-           child: Text("Counter page"))
+          Column(
+            children: [
+              ElevatedButton(
+                  onPressed: () {
+                    Get.toNamed('/counter');
+                  },
+                  child: Text('Go to Counter Page')
+              ),
+              SizedBox(height: 10, width: 10),
+              ElevatedButton(
+                  onPressed: () {
+                    Get.toNamed('/biodata');
+                  },
+                  child: Text('Go to Biodata Form Page')
+              ),
+            ],
+          )
         ],
       ),
     );

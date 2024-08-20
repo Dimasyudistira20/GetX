@@ -7,14 +7,15 @@ class CounterController extends GetxController {
 
   void increment() {
     if (bilangan.value >= 20) {
-      Get.snackbar('Warning', 'Ges atuh bos');
+      Get.snackbar('warning', 'Ges atuh uy');
     } else {
       bilangan.value++;
     }
   }
-   void decrement() {
+
+  void decrement() {
     if (bilangan.value <= 0) {
-      Get.snackbar('Warning', 'Ges beak');
+      Get.snackbar('warning', 'Beak boss');
     } else {
       bilangan.value--;
     }
