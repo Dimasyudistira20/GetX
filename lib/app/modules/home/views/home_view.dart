@@ -36,6 +36,13 @@ class HomeView extends GetView<HomeController> {
                   },
                   child: Text('Go to Biodata Form Page')
               ),
+              SizedBox(height: 10, width: 10),
+              ElevatedButton(
+                  onPressed: () {
+                    Get.toNamed('/profile');
+                  },
+                  child: Text('Go to profile Page')
+              ),
             ],
           )
         ],
