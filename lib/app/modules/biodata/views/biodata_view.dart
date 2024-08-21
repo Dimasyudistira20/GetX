@@ -3,9 +3,11 @@ import 'package:get/get.dart';
 import '../controllers/biodata_controller.dart';
 
 class BiodataView extends GetView<BiodataController> {
-  const BiodataView({Key? key}) : super(key: key);
+   BiodataView({Key? key}) : super(key: key);
 
   @override
+  final BiodataController controller = Get.put(BiodataController());
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

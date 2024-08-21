@@ -4,6 +4,8 @@ import '../middlewares/auth_middleware.dart';
 import '../modules/biodata/bindings/biodata_binding.dart';
 import '../modules/biodata/views/biodata_view.dart';
 import '../modules/biodata/views/output_view.dart';
+import '../modules/bottom_menu/bindings/bottom_menu_binding.dart';
+import '../modules/bottom_menu/views/bottom_menu_view.dart';
 import '../modules/counter/bindings/counter_binding.dart';
 import '../modules/counter/views/counter_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -20,7 +22,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.HOME;
+  static const INITIAL = Routes.BOTTOM_MENU;
 
   static final routes = [
     GetPage(
@@ -35,7 +37,7 @@ class AppPages {
         middlewares: [AuthMiddleware()]),
     GetPage(
         name: _Paths.BIODATA,
-        page: () => const BiodataView(),
+        page: () =>  BiodataView(),
         binding: BiodataBinding(),
         middlewares: [AuthMiddleware()]),
     GetPage(
@@ -54,9 +56,15 @@ class AppPages {
       binding: LoginBinding(),
     ),
     GetPage(
-      name: _Paths.PROFILE,
-      page: () =>  ProfileView(),
-      binding: ProfileBinding(),
+        name: _Paths.PROFILE,
+        page: () => ProfileView(),
+        binding: ProfileBinding(),
+        middlewares: [AuthMiddleware()]),
+    GetPage(
+      name: _Paths.BOTTOM_MENU,
+      page: () =>  BottomMenuView(),
+      binding: BottomMenuBinding(),
+       middlewares: [AuthMiddleware()]
     ),
   ];
 }
