@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:myapp/app/modules/tag/views/view/create_tag_view.dart';
-import 'package:myapp/app/modules/tag/views/view/edit_tag_view.dart';
+import 'package:myapp/app/modules/user/views/view/create_user_view.dart';
+import 'package:myapp/app/modules/user/views/view/show_user_view.dart';
 
 import '../middlewares/auth_middleware.dart';
 import '../modules/biodata/bindings/biodata_binding.dart';
@@ -25,7 +25,12 @@ import '../modules/register/bindings/register_binding.dart';
 import '../modules/register/views/register_view.dart';
 import '../modules/tag/bindings/tag_binding.dart';
 import '../modules/tag/views/tag_view.dart';
+import '../modules/tag/views/view/create_tag_view.dart';
+import '../modules/tag/views/view/edit_tag_view.dart';
 import '../modules/tag/views/view/show_tag_view.dart';
+import '../modules/user/bindings/user_binding.dart';
+import '../modules/user/views/user_view.dart';
+import '../modules/user/views/view/edit_user_view.dart';
 
 part 'app_routes.dart';
 
@@ -96,12 +101,11 @@ class AppPages {
         binding: KategoriBinding(),
         middlewares: [AuthMiddleware()]),
     GetPage(
-      name: _Paths.TAG,
-      page: () =>  TagView(),
-      binding: TagBinding(),
-      middlewares: [AuthMiddleware()]
-    ),
-     GetPage(
+        name: _Paths.TAG,
+        page: () => TagView(),
+        binding: TagBinding(),
+        middlewares: [AuthMiddleware()]),
+    GetPage(
         name: _Paths.CREATE_TAG,
         page: () => CreateTagView(),
         binding: TagBinding(),
@@ -116,6 +120,26 @@ class AppPages {
         page: () => ShowTagView(),
         binding: TagBinding(),
         middlewares: [AuthMiddleware()]),
-
+    GetPage(
+      name: _Paths.USER,
+      page: () =>  UserView(),
+      binding: UserBinding(),
+      middlewares: [AuthMiddleware()]
+    ),
+     GetPage(
+        name: _Paths.CREATE_USER,
+        page: () => CreateUserView(),
+        binding: TagBinding(),
+        middlewares: [AuthMiddleware()]),
+    GetPage(
+        name: _Paths.EDIT_USER,
+        page: () => EditUserView(),
+        binding: TagBinding(),
+        middlewares: [AuthMiddleware()]),
+    GetPage(
+        name: _Paths.SHOW_USER,
+        page: () => ShowUserView(),
+        binding: TagBinding(),
+        middlewares: [AuthMiddleware()]),
   ];
 }
