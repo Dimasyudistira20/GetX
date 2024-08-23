@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:myapp/app/modules/tag/views/view/create_tag_view.dart';
+import 'package:myapp/app/modules/tag/views/view/edit_tag_view.dart';
 
 import '../middlewares/auth_middleware.dart';
 import '../modules/biodata/bindings/biodata_binding.dart';
@@ -21,6 +23,9 @@ import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
 import '../modules/register/bindings/register_binding.dart';
 import '../modules/register/views/register_view.dart';
+import '../modules/tag/bindings/tag_binding.dart';
+import '../modules/tag/views/tag_view.dart';
+import '../modules/tag/views/view/show_tag_view.dart';
 
 part 'app_routes.dart';
 
@@ -71,28 +76,46 @@ class AppPages {
         binding: BottomMenuBinding(),
         middlewares: [AuthMiddleware()]),
     GetPage(
-      name: _Paths.KATEGORI,
-      page: () =>  KategoriView(),
-      binding: KategoriBinding(),
-      middlewares: [AuthMiddleware()]
-    ),
+        name: _Paths.KATEGORI,
+        page: () => KategoriView(),
+        binding: KategoriBinding(),
+        middlewares: [AuthMiddleware()]),
     GetPage(
-      name: _Paths.CREATE_KATEGORI,
-      page: () =>  CreateKategoriView(),
-      binding: KategoriBinding(),
-      middlewares: [AuthMiddleware()]
-    ),
+        name: _Paths.CREATE_KATEGORI,
+        page: () => CreateKategoriView(),
+        binding: KategoriBinding(),
+        middlewares: [AuthMiddleware()]),
     GetPage(
-      name: _Paths.EDIT_KATEGORI,
-      page: () =>  EditKategoriView(),
-      binding: KategoriBinding(),
-      middlewares: [AuthMiddleware()]
-    ),
+        name: _Paths.EDIT_KATEGORI,
+        page: () => EditKategoriView(),
+        binding: KategoriBinding(),
+        middlewares: [AuthMiddleware()]),
     GetPage(
-      name: _Paths.SHOW_KATEGORI,
-      page: () =>  ShowKategoriView(),
-      binding: KategoriBinding(),
+        name: _Paths.SHOW_KATEGORI,
+        page: () => ShowKategoriView(),
+        binding: KategoriBinding(),
+        middlewares: [AuthMiddleware()]),
+    GetPage(
+      name: _Paths.TAG,
+      page: () =>  TagView(),
+      binding: TagBinding(),
       middlewares: [AuthMiddleware()]
     ),
+     GetPage(
+        name: _Paths.CREATE_TAG,
+        page: () => CreateTagView(),
+        binding: TagBinding(),
+        middlewares: [AuthMiddleware()]),
+    GetPage(
+        name: _Paths.EDIT_TAG,
+        page: () => EditTagView(),
+        binding: TagBinding(),
+        middlewares: [AuthMiddleware()]),
+    GetPage(
+        name: _Paths.SHOW_TAG,
+        page: () => ShowTagView(),
+        binding: TagBinding(),
+        middlewares: [AuthMiddleware()]),
+
   ];
 }
